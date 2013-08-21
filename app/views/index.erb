@@ -1,11 +1,14 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>These are <%= @user.username %> Tweets</h1>
+  <h4>Check em out!</h4>
 
-  <% if @tweets %>
-    <% @tweets.each do |tweet| %>
-      <%= tweet.content %> <br>
-    <%end%>
-    <%= @time_past %>
-  <%end%>
+  <%= erb :tweet_list, :layout => false %>
+  <br>
+  <form class="tweet_form" action="/<%= @user.username %>" method="post">
+    Write a Tweet: <input id="tweet_input" type="text" name="tweet">
+    <input id="tweet_button" type="submit" value="Tweet">
+  </form>
+  <div class="message">We are processing your request</div>
 </div>
+
+

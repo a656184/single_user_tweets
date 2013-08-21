@@ -33,3 +33,14 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
+Client = Twitter::REST::Client.new do |config|
+  config.consumer_key = 'p0byXZiJGvoxb03dVPCIA'
+  config.consumer_secret = 'dyHNTNfncIVa2QuOXaGiKBsElOFAoCLIP80HaJ9FY'
+  config.access_token = '162116778-Zajaro1LSN6bwj1vB6VsNDvs63e1SWmr10jPKPke'
+  config.access_token_secret = 'f5Xn8HsOFd1RZJoBeLm7FTMipLiqKmwWjVP4UPdLU'
+end
+
+
+
